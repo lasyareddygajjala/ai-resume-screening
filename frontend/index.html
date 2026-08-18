@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Screening System</title>
+
+    <link rel="stylesheet" href="styles.css?v=4">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+        <header class="header">
+
+            <div class="header-content">
+
+                <div class="header-badge">
+                    ⚡ AI-POWERED RECRUITMENT
+                </div>
+
+                <h1>
+                    AI Resume Screening System
+                </h1>
+
+                <p>
+                    Intelligent candidate screening, ATS scoring,
+                    skill matching and candidate ranking
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= MAIN SCREENING CARD ================= -->
+        <section class="form-card">
+
+            <div class="section-title">
+
+                <div class="title-icon">
+                    🤖
+                </div>
+
+                <div>
+                    <h2>Candidate Screening</h2>
+
+                    <p>
+                        Enter the job requirements and upload candidate resumes
+                        for automated AI-powered analysis.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- ================= JOB DESCRIPTION ================= -->
+            <div class="form-group">
+
+                <label for="jobDescription">
+                    📋 Job Description
+                </label>
+
+                <textarea
+                    id="jobDescription"
+                    placeholder="Paste the complete job description here..."
+                ></textarea>
+
+                <small>
+                    Include required skills, responsibilities, education
+                    and experience.
+                </small>
+
+            </div>
+
+
+            <!-- ================= CATEGORY + RESUMES ================= -->
+            <div class="form-row">
+
+                <!-- CATEGORY -->
+                <div class="input-group">
+
+                    <label for="jobCategory">
+                        🏷️ Job Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jobCategory"
+                        placeholder="e.g. IT, Finance, Marketing"
+                    >
+
+                    <small>
+                        Enter the role category.
+                    </small>
+
+                </div>
+
+
+                <!-- RESUMES -->
+                <div class="input-group">
+
+                    <label for="resumeFiles">
+                        📄 Candidate Resumes
+                    </label>
+
+                    <input
+                        type="file"
+                        id="resumeFiles"
+                        multiple
+                        accept=".pdf,.txt"
+                    >
+
+                    <small>
+                        Upload one or multiple PDF/TXT resumes.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ANALYZE BUTTON ================= -->
+            <button
+                id="analyzeBtn"
+                class="primary-btn"
+                onclick="submitForm()"
+            >
+
+                <span class="btn-text">
+                    Analyze Candidates
+                </span>
+
+                <span class="btn-arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- STATUS -->
+            <div
+                id="loadingMessage"
+                class="loading-message"
+                style="display:none;"
+            >
+                <span class="loading-spinner"></span>
+
+                <span>
+                    AI is analyzing candidate resumes...
+                </span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= SEARCH ================= -->
+        <section class="search-box">
+
+            <div class="search-header">
+
+                <div>
+                    <h3>Candidate Results</h3>
+
+                    <p>
+                        Search and review analyzed candidates
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="search-wrapper">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search candidates by name, skill or category..."
+                    onkeyup="searchCandidate()"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULTS ================= -->
+        <main
+            id="results"
+            class="results"
+        ></main>
+
+
+        <!-- ================= DOWNLOAD REPORT ================= -->
+        <section class="download-section">
+
+            <button
+                id="downloadBtn"
+                class="download-btn"
+                style="display:none;"
+                onclick="downloadReport()"
+            >
+                📄 Download Candidate Report
+            </button>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="footer">
+
+            <div class="footer-brand">
+                AI Resume Screening System
+            </div>
+
+            <div class="footer-features">
+                <span>✓ Automated ATS Analysis</span>
+                <span>✓ Candidate Ranking</span>
+                <span>✓ Skill Matching</span>
+                <span>✓ Interview Questions</span>
+            </div>
+
+            <p>
+                Intelligent recruitment assistance powered by AI
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="upload.js"></script>
+
+</body>
+
+</html>
